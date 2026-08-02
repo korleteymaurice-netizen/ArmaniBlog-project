@@ -1,21 +1,25 @@
 ArmaniBlog
 
-ArmaniBlog is a simple blog web application built as a capstone project using Node.js, Express.js, and EJS.
+A responsive blog web application built with Node.js, Express.js, and EJS.
 
-The application allows users to create, view, edit, and delete blog posts. Posts are stored temporarily in memory, so they are not saved when the server is restarted.
+🚀 Live Demo
 
-Features
+"Visit ArmaniBlog" (https://armaniblog-project-production.up.railway.app)
 
-- Create new blog posts
-- View all blog posts
-- View individual posts
-- Edit existing posts
-- Delete posts
+💻 GitHub Repository
+
+This repository contains the complete source code for ArmaniBlog.
+
+✨ Features
+
+- Create blog posts
+- View blog posts
+- Edit blog posts
+- Delete blog posts
 - Responsive design for desktop and mobile
-- Dynamic post dates
-- Custom 404 page
+- Server-side rendering with EJS
 
-Technologies Used
+🛠️ Technologies Used
 
 - Node.js
 - Express.js
@@ -24,10 +28,9 @@ Technologies Used
 - CSS
 - JavaScript
 
-How I Built It
+📌 About
 
-I started by creating a Node.js project and installing Express.js and EJS.
-
+ArmaniBlog was developed as a capstone project to demonstrate practical skills in Node.js, Express.js, EJS, routing, templating, and responsive web design.
 I used Express.js to create the web server and handle the different routes in the application.
 
 EJS was used as the templating engine to generate dynamic HTML pages. Blog posts are stored in a JavaScript array while the application is running.
