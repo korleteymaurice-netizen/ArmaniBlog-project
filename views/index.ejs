@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>ArmaniBlog</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="/" class="logo">ArmaniBlog</a>
+
+            <a href="/create" class="btn btn-primary">
+                + New Post
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <h1>Welcome to ArmaniBlog</h1>
+
+            <p>
+                Thoughts, ideas and stories from my journey.
+            </p>
+
+        </section>
+
+
+        <% if (posts.length === 0) { %>
+
+            <div class="empty-state">
+
+                <h2>No posts yet</h2>
+
+                <p>
+                    Create your first blog post to get started.
+                </p>
+
+                <a href="/create" class="btn btn-primary">
+                    Create Your First Post
+                </a>
+
+            </div>
+
+        <% } else { %>
+
+            <section class="posts">
+
+                <% posts.forEach(post => { %>
+
+                    <article class="post-card">
+
+                        <h2>
+                            <%= post.title %>
+                        </h2>
+
+                        <p class="post-date">
+                            <%= post.date %>
+                        </p>
+
+                        <p class="post-preview">
+                            <%= post.content.substring(0, 200) %>
+                            <% if (post.content.length > 200) { %>
+                                ...
+                            <% } %>
+                        </p>
+
+                        <div class="post-actions">
+
+                            <a
+                                href="/post/<%= post.id %>"
+                                class="btn btn-secondary"
+                            >
+                                Read More
+                            </a>
+
+                            <a
+                                href="/edit/<%= post.id %>"
+                                class="btn btn-secondary"
+                            >
+                                Edit
+                            </a>
+
+                            <form
+                                action="/delete/<%= post.id %>"
+                                method="POST"
+                            >
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-danger"
+                                >
+                                    Delete
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </article>
+
+                <% }) %>
+
+            </section>
+
+        <% } %>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © <%= new Date().getFullYear() %> ArmaniBlog.
+                Built with Node.js, Express and EJS.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

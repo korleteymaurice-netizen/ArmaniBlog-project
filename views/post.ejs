@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title><%= post.title %> - ArmaniBlog</title>
+
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="/" class="logo">
+                ArmaniBlog
+            </a>
+
+            <a href="/" class="btn btn-secondary">
+                Back Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <article class="single-post">
+
+            <p class="post-date">
+                <%= post.date %>
+            </p>
+
+            <h1>
+                <%= post.title %>
+            </h1>
+
+            <div class="post-content">
+
+                <p>
+                    <%= post.content %>
+                </p>
+
+            </div>
+
+
+            <div class="post-actions">
+
+                <a
+                    href="/edit/<%= post.id %>"
+                    class="btn btn-secondary"
+                >
+                    Edit Post
+                </a>
+
+                <form
+                    action="/delete/<%= post.id %>"
+                    method="POST"
+                >
+
+                    <button
+                        type="submit"
+                        class="btn btn-danger"
+                    >
+                        Delete
+                    </button>
+
+                </form>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © <%= new Date().getFullYear() %> ArmaniBlog.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
