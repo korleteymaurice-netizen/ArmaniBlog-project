@@ -2,7 +2,7 @@
 const express = require("express");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -99,6 +99,6 @@ app.use((req, res) => {
 
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on port ${port}`);
 });
